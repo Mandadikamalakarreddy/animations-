@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +24,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+@layer base{
+  @font-face {
+    font-family: 'circular-web';
+    src: url('/public/fonts/circularweb-book.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'general';
+    src: url('/public/fonts/general.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'robert-medium';
+    src: url('/public/fonts/robert-medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'robert-regular';
+    src: url('/public/fonts/robert-regular.woff2') format('woff2');
+  }
 }
