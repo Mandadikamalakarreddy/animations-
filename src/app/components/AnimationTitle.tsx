@@ -1,3 +1,5 @@
+"use client"
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -5,6 +7,7 @@ import { useEffect, useRef } from "react";
 interface TitleProps {
   title: string;
   containerClass: string;
+  sectionId?:string;
 }
 
 export default function AnimationTitle({ title, containerClass }: TitleProps) {

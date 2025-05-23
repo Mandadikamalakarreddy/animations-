@@ -31,7 +31,7 @@ export default function Hero() {
         opacity: 0,
         duration: 0.8,
         ease: "power3.inOut",
-        onComplete: () => setIsLoading(false)
+        onComplete: () => setIsLoading(false),
       });
     }
   }, [loadedVideos]);
@@ -40,7 +40,7 @@ export default function Hero() {
   useEffect(() => {
     const preloadVideos = () => {
       for (let i = 1; i <= totalVideos; i++) {
-        const video = document.createElement('video');
+        const video = document.createElement("video");
         video.src = getVideoSrc(i);
         video.onloadeddata = handleVideoLoad;
         video.load();
@@ -107,31 +107,14 @@ export default function Hero() {
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {isLoading && (
-        <div 
+        <div
           ref={loaderRef}
           className="flex-center fixed z-[100] h-dvh w-screen overflow-hidden bg-violet-50"
         >
-          <div className="loader-container">
-            {/* Stylized text that matches your brand */}
-            <h2 className="special-font loader-heading mb-8 text-blue-75">
-              G<b>A</b>MING
-            </h2>
-            
-            {/* Progress indicator */}
-            <div className="loading-progress-container">
-              <div 
-                className="loading-progress-bar" 
-                style={{ width: `${(loadedVideos / totalVideos) * 100}%` }}
-              />
-            </div>
-                        <div className="three-body mt-8">
-              <div className="three-body__dot bg-blue-75" />
-              <div className="three-body__dot bg-blue-75" />
-              <div className="three-body__dot bg-blue-75" />
-            </div>
-                 <p className="mt-6 font-robert-regular text-blue-75">
-              {Math.round((loadedVideos / totalVideos) * 100)}% Loaded
-            </p>
+          <div className="three-body mt-8">
+            <div className="three-body__dot bg-blue-75" />
+            <div className="three-body__dot bg-blue-75" />
+            <div className="three-body__dot bg-blue-75" />
           </div>
         </div>
       )}
