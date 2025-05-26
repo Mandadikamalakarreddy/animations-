@@ -18,7 +18,7 @@ interface UpdateItem {
 }
 
 
-const Updates: React.FC= () => {
+const Updates: React.FC = () => {
   const imgRefs = useRef<Array<HTMLImageElement | null>>([]);
 
   const updates: UpdateItem[] = [
@@ -104,10 +104,10 @@ const Updates: React.FC= () => {
         >
           Lat<b>e</b>st <b>U</b>PDATES
         </h1>
-        <p className="md:ps-5 text-sm font-semibold opacity-50">
-          Stay updated with the latest news, events, and updates in our
-          ecosystem. Be part of our universe's growth and evolution.
-        </p>
+         <p className="md:ps-5 text-sm font-semibold opacity-50">
+  Stay updated with the latest news, events, and updates in our
+  ecosystem. Be part of our universe&apos;s growth and evolution.
+</p>
         <Button
           title="READ ALL NEWS"
           containerClass="!bg-black text-white flex space-x-3 md:ms-5"

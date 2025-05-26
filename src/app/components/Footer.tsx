@@ -2,6 +2,8 @@
 import React from "react";
 import TextSkewEffect from "./SkewedText";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../../public/img/logo.png";
 
 export default function Footer() {
   // Data for navigation sections
@@ -41,7 +43,7 @@ export default function Footer() {
                   title="Company"
                   className="inline-flex items-center"
                 >
-                  <img src="/img/logo.png" alt="logo" className="w-10" />
+                  <Image src={logo} alt="logo" width={40} className="object-cover" />
                 </Link>
               </div>
 

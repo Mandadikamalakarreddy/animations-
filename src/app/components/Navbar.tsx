@@ -5,6 +5,8 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
+import Image from "next/image";
+import logo from "../../../public/img/logo.png";
 
 export default function Navbar() {
   const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
@@ -61,7 +63,8 @@ export default function Navbar() {
       <header className="absolute top-0 w-full">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <Image src={logo} alt="logo" width={40} className="object-cover" />
+
             <Button
               id="product-trailer"
               title="Product"

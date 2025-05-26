@@ -6,18 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimationTitle from "./AnimationTitle";
 import Button from "./Button";
 
+
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 interface ImageContact {
-  src: string;
+  src: string ;
   clipClass: string;
 }
 
 function ImageClipBox({ src, clipClass }: ImageContact) {
   return (
-    <div className={clipClass}>
-      <img src={src} alt="" />
+    <div className={`${clipClass}`}>
+      <img src={src}  alt="Images" className="object-cover" />
     </div>
   );
 }
@@ -78,12 +79,13 @@ export default function Contact() {
       <div className="mb-2 flex justify-center z-50 sm:hidden">
         <div className="relative h-72 w-72">
           <ImageClipBox
+            // src={swordmanpartial}
             src="/img/swordman-partial.webp"
-            clipClass="absolute right-0 top-0 z-50 "
+            clipClass="absolute -right-5 top-0 z-50 "
           />
           <ImageClipBox
             src="/img/swordman.webp"
-            clipClass="absolute right-0 top-0 sword-man-clip-path z-50 "
+            clipClass="absolute -right-5 top-0 sword-man-clip-path z-50 "
           />
         </div>
       </div>
@@ -95,11 +97,13 @@ export default function Contact() {
           className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96"
         >
           <ImageClipBox
-            src="img/contact-1.webp"
+            // src={contact1}
+            src="/img/contact-1.webp"
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
-            src="img/contact-2.webp"
+            // src={contact2}
+            src="/img/contact-2.webp"
             clipClass="contact-clip-path-2 lg:translate-y-20 translate-y-40"
           />
         </div>
@@ -111,10 +115,12 @@ export default function Contact() {
         >
           <div className="relative h-full w-full">
             <ImageClipBox
+              // src={swordmanpartial}
               src="/img/swordman-partial.webp"
               clipClass="absolute right-0 top-0 md:scale-125"
             />
             <ImageClipBox
+              // src={swordman}
               src="/img/swordman.webp"
               clipClass="absolute right-0 top-0 sword-man-clip-path md:scale-125"
             />

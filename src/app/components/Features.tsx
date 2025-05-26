@@ -23,6 +23,15 @@ const BentoTilt = forwardRef<HTMLDivElement, CardTilt>(
     const [transformStyle, setTransformStyle] = useState("");
     const innerRef = useRef<HTMLDivElement>(null);
     const animationRef = useRef<GSAPTween | null>(null);
+      useEffect(() => {
+      if (innerRef.current && ref) {
+        if (typeof ref === 'function') {
+          ref(innerRef.current);
+        } else {
+          ref.current = innerRef.current;
+        }
+      }
+    }, [ref]);
 
     useEffect(() => {
       if (innerRef.current) {
@@ -108,7 +117,6 @@ function BentoCard({ src, title, description }: CardData) {
 export default function Features() {
   const containerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const tiltRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   return (
     <section className="bg-black pb-52" ref={containerRef}>

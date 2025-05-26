@@ -11,7 +11,6 @@ interface TextSkewProps {
 const TextSkewEffect: React.FC<TextSkewProps> = ({ text, className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const lettersRef = useRef<HTMLSpanElement[]>([]);
-  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -33,7 +32,7 @@ const TextSkewEffect: React.FC<TextSkewProps> = ({ text, className = '' }) => {
       const containerRect = container.getBoundingClientRect();
       const mouseX = e.clientX - containerRect.left;
       
-      letters.forEach((letter, index) => {
+      letters.forEach((letter) => {
         if (!letter) return;
         
         const letterRect = letter.getBoundingClientRect();

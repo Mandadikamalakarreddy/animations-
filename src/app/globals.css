@@ -100,7 +100,7 @@ body {
   }
 
   .story-img-container {
-    @apply relative md:h-dvh h-[90vh] w-full;
+    @apply relative md:h-dvh h-[90vh] w-full mb-10;
     filter: url("#flt_tag");
   }
 
