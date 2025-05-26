@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Story from "./components/Story";
+import Updates from "./components/Updates";
+import WhoAreWe from "./components/WhoAreWe ";
 
 
 export default function Home() {
@@ -13,8 +15,10 @@ export default function Home() {
   <Navbar/>
   <Hero/>
   <About/>
+  <WhoAreWe/>
   <Features/>
   <Story/>
+  <Updates/>
   <Contact/>
   <Footer/> 
 </main>

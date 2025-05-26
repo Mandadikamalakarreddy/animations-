@@ -74,6 +74,20 @@ export default function Contact() {
 
   return (
     <div id="contact" className="my-20 min-h-96 w-screen px-10">
+      {/* Right Images - Mobile (visible only on mobile, outside the black box) */}
+      <div className="mb-2 flex justify-center z-50 sm:hidden">
+        <div className="relative h-72 w-72">
+          <ImageClipBox
+            src="/img/swordman-partial.webp"
+            clipClass="absolute right-0 top-0 z-50 "
+          />
+          <ImageClipBox
+            src="/img/swordman.webp"
+            clipClass="absolute right-0 top-0 sword-man-clip-path z-50 "
+          />
+        </div>
+      </div>
+
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
         {/* Left Images */}
         <div 
@@ -90,7 +104,7 @@ export default function Contact() {
           />
         </div>
         
-        {/* Right Images */}
+        {/* Right Images - Desktop (hidden on mobile) */}
         <div 
           ref={rightImagesRef}
           className="absolute right-0 top-0 hidden h-full w-60 items-end justify-end sm:block md:right-10 md:w-80 lg:top-20"
@@ -115,7 +129,7 @@ export default function Contact() {
           <AnimationTitle
             title="let's b<b>u</b>ild the <br /> new era of g<b>a</b>ming <br /> t<b>o</b>gether."
             sectionId="#stroy"
-            containerClass="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]"
+            containerClass="special-font mt-10 w-full font-zentry text-2xl leading-[0.9] md:text-[6rem]"
           />
           <div>
             <Button

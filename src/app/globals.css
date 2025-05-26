@@ -147,7 +147,14 @@ body {
   animation: indicator-line 0.5s ease infinite;
   animation-delay: calc(var(--animation-order) * 0.1s);
 }
-
+.box {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.box-image {
+  transform-origin: center;
+  pointer-events: none;
+}
 @keyframes indicator-line {
   0% {
     height: 4px;
