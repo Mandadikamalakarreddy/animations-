@@ -49,9 +49,58 @@ export default function Hero() {
     preloadVideos();
   }, []);
 
-  const handleVideoLoad = (): void => {
-    setLoadedVideos((prev) => prev + 1);
+ const handleVideoLoad = (): void => {
+  setLoadedVideos((prev) => prev + 1);
+};
+
+useEffect(() => {
+  const preloadVideos = async () => {
+    const videoPromises = [];
+    
+    for (let i = 1; i <= totalVideos; i++) {
+      const videoPromise = new Promise<void>((resolve, reject) => {
+        const video = document.createElement("video");
+        video.src = getVideoSrc(i);
+        video.muted = true; // Ensure muted for autoplay
+        video.playsInline = true; // Important for mobile
+        video.preload = "metadata"; // Load metadata first
+        
+        video.onloadeddata = () => {
+          handleVideoLoad();
+          resolve();
+        };
+        
+        video.onerror = (e) => {
+          console.error(`Failed to load video ${i}:`, e);
+          reject(e);
+        };
+                video.load();
+      });
+      
+      videoPromises.push(videoPromise);
+    }
+    
+    try {
+      await Promise.allSettled(videoPromises);
+    } catch (error) {
+      console.error("Some videos failed to load:", error);
+    }
   };
+  
+  preloadVideos();
+}, []);
+
+const playVideoSafely = async (videoElement: HTMLVideoElement | null) => {
+  if (!videoElement) return;
+  
+  try {
+    videoElement.muted = true;
+    videoElement.playsInline = true;
+    await videoElement.play();
+  } catch (error) {
+    console.warn("Autoplay failed:", error);
+  }
+};
 
   const handleMiniVideoClick = (): void => {
     setHasClicked(true);
@@ -60,31 +109,31 @@ export default function Hero() {
 
   const getVideoSrc = (index: number): string => `videos/hero-${index}.mp4`;
 
-  useGSAP(
-    () => {
-      if (hasClicked) {
-        gsap.set("#next-video", { visibility: "visible" });
-        gsap.to("#next-video", {
-          transformOrigin: "center center",
-          scale: 1,
-          width: "100%",
-          height: "100%",
-          duration: 1.5,
-          ease: "power1.inOut",
-          onStart: () => {
-            nextVideoRef.current?.play();
-          },
-        });
-        gsap.from("#current-video", {
-          transformOrigin: "center center",
-          scale: 0,
-          duration: 2,
-          ease: "power1.inOut",
-        });
-      }
-    },
-    { dependencies: [currentIndex], revertOnUpdate: true }
-  );
+useGSAP(
+  () => {
+    if (hasClicked) {
+      gsap.set("#next-video", { visibility: "visible" });
+      gsap.to("#next-video", {
+        transformOrigin: "center center",
+        scale: 1,
+        width: "100%",
+        height: "100%",
+        duration: 1.5,
+        ease: "power1.inOut",
+        onStart: () => {
+          playVideoSafely(nextVideoRef.current);
+        },
+      });
+      gsap.from("#current-video", {
+        transformOrigin: "center center",
+        scale: 0,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+    }
+  },
+  { dependencies: [currentIndex], revertOnUpdate: true }
+);
 
   useGSAP(() => {
     gsap.set("#video-frame", {

@@ -79,7 +79,7 @@ export default function WhoAreWe() {
       onComplete: () => {
         // Restart the continuous animation after hover ends
         gsap.to(box, {
-          scale: 1.1,
+          scale: 1.5,
           duration: 2.5,
           yoyo: true,
           repeat: -1,
@@ -171,7 +171,7 @@ export default function WhoAreWe() {
                   className="box w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-black rounded-xl mx-1 sm:mx-2 relative cursor-pointer z-10"
                 >
                   <img
-                    src="/img/gallery-5.webp"
+                    src="\img\entrance.webp"
                     alt=""
                     className="box-image absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 scale-75 pointer-events-none z-50"
                   />
@@ -198,7 +198,7 @@ export default function WhoAreWe() {
                   className="box w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-black rounded-xl mx-1 sm:mx-2 relative cursor-pointer z-10"
                 >
                   <img
-                    src="/img/gallery-5.webp"
+                    src="/img/gallery-2.webp"
                     alt=""
                     className="box-image absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 scale-75 pointer-events-none z-50"
                   />

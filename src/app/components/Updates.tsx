@@ -43,29 +43,6 @@ const Updates: React.FC<UpdatesProps> = () => {
   ];
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const context = gsap.context(() => {
-      const titleAnimation = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "100 bottom ",
-          end: "center bottom",
-          toggleActions: "play none none reverse",
-        },
-      });
-      titleAnimation.to(
-        ".animated-word",
-        {
-          opacity: 1,
-          transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
-          ease: "power2.inOut",
-          stagger: 0.02,
-        },
-        0
-      );
-    }, containerRef);
-    return () => context.revert();
-  }, []);
 
   const handleMouseMove = (
     event: MouseEvent<HTMLDivElement>,
