@@ -23,9 +23,7 @@ export default function Footer() {
       { name: "Youtube", url: "/" },
       { name: "Medium", url: "/" },
     ],
-    resources: [
-      { name: "Media Kit", url: "/" },
-    ],
+    resources: [{ name: "Media Kit", url: "/" }],
   };
 
   return (
@@ -42,12 +40,10 @@ export default function Footer() {
                   title="Company"
                   className="inline-flex items-center"
                 >
-                  <span className="ml-2 text-xl font-bold tracking-wide uppercase">
-                    Company
-                  </span>
+                  <img src="/img/logo.png" alt="logo" className="w-10" />
                 </a>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
                 {/* Explore Section */}
                 <div>
@@ -67,7 +63,7 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Products Section */}
                 <div>
                   <p className="font-semibold text-[8px]  lg:text-[10px] uppercase">
@@ -86,7 +82,7 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Social Section */}
                 <div>
                   <p className="font-semibold text-[8px]  lg:text-[10px] uppercase">
@@ -105,7 +101,7 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Resources Section */}
                 <div>
                   <p className="font-semibold text-[8px]  lg:text-[10px] uppercase">
@@ -126,11 +122,9 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-col justify-between pt-5 pb-10 border-t border-slate-950 sm:flex-row">
-              <p className="text-sm">
-                © Zentry 2024. All rights reserved.
-              </p>
+              <p className="text-sm">© Zentry 2024. All rights reserved.</p>
               <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                 <p className="text-sm">Privacy Policy</p>
               </div>
