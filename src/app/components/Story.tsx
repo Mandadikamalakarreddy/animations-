@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import AnimationTitle from "./AnimationTitle";
 import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
+import Image from "next/image";
 
 export default function Story() {
   const frameRef = useRef<HTMLImageElement>(null);
@@ -19,7 +20,7 @@ export default function Story() {
     const y = clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateY = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * -10;
     const rotateX = ((y - centerX) / centerY) * 10;
     gsap.to(element, {
       duration: 0.3,
@@ -55,7 +56,7 @@ export default function Story() {
           <div className="story-img-container">
             <div className="story-img-mask ">
               <div className="story-img-content ">
-                <img
+                <Image
                   ref={frameRef}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseLeave}
@@ -63,6 +64,7 @@ export default function Story() {
                   onMouseLeave={handleMouseLeave}
                   src="/img/entrance.webp"
                   alt="entrance"
+                  fill
                   className="object-contain"
                 />
               </div>

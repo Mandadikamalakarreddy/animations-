@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import TextSkewEffect from "./SkewedText";
+import Link from "next/link";
 
 export default function Footer() {
   // Data for navigation sections
@@ -34,14 +35,14 @@ export default function Footer() {
           <div className="px-4 pt-6 w-screen mx-auto md:px-28 lg:px-8">
             <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-5">
               <div className="col-span-1">
-                <a
+                <Link
                   href="/"
                   aria-label="Go home"
                   title="Company"
                   className="inline-flex items-center"
                 >
                   <img src="/img/logo.png" alt="logo" className="w-10" />
-                </a>
+                </Link>
               </div>
 
               <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
@@ -72,12 +73,12 @@ export default function Footer() {
                   <ul className="mt-2 font-circular-web font-medium text-lg md:text-[22px] space-y-2">
                     {footerLinks.products.map((link, index) => (
                       <li key={`product-${index}`}>
-                        <a
+                        <Link
                           href={link.url}
                           className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                         >
                           {link.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -91,12 +92,12 @@ export default function Footer() {
                   <ul className="mt-2 font-circular-web font-medium text-lg md:text-[22px] space-y-2">
                     {footerLinks.social.map((link, index) => (
                       <li key={`social-${index}`}>
-                        <a
+                        <Link
                           href={link.url}
                           className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                         >
                           {link.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

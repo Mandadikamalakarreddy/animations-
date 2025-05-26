@@ -1,6 +1,6 @@
 "use client";
 
-import React, {  useRef, MouseEvent, useEffect } from "react";
+import React, {  useRef, MouseEvent } from "react";
 import Button from "./Button";
 import { SiSoundcharts } from "react-icons/si";
 import { useGSAP } from "@gsap/react";
@@ -17,9 +17,8 @@ interface UpdateItem {
   alt: string;
 }
 
-interface UpdatesProps {}
 
-const Updates: React.FC<UpdatesProps> = () => {
+const Updates: React.FC= () => {
   const imgRefs = useRef<Array<HTMLImageElement | null>>([]);
 
   const updates: UpdateItem[] = [

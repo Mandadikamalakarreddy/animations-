@@ -133,9 +133,8 @@ export default function WhoAreWe() {
             className="mt-5 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] uppercase leading-[0.8] text-black"
           >
             <div className="flex flex-col items-center">
-              <div className="animated-text animated-word">
-                We're b<b>u</b>ilding
-              </div>
+              <div className="animated-text animated-word">We&rsquo;re b<b>u</b>ilding</div>
+
 
               <div className="animated-text animated-word inline-flex items-center flex-wrap justify-center">
                 <span>a new</span>
